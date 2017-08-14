@@ -1,22 +1,27 @@
 <!--index.wxml-->
 <view class="calculator-container">
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form>
   <view class="section title-section">
-    <text class="section1">数量</text>
+    <text class="section1">数量{{i}}</text>
     <text class="section2">单价</text>
     <text class="section3">结算价</text>
     <text class="section4">选中</text>
   </view>
-  <view class="section input-section" wx:for="{{count}}">
-    <text class="section1">?</text>
-    <text class="section2">?</text>
-    <text class="section3">?</text>
-    <text class="section4">?</text>
+  <view class="section text-section" wx:for="{{count}}" wx:key="index">
+     <text class="section1">{{set[index].number||'?'}}</text>
+    <text class="section2">{{set[index].price||'?'}}</text>
+    <text class="section3">{{set[index].result||'?'}}</text>
+    <checkbox value="{{!!set[index].check}}"/> 
   </view>
-  <view class="btn-area">
-    <button formType="submit" class="btn-add">+</button>
-    <button formType="reset" class="btn-minus">-</button>
-    <button formType="submit" class="btn-calculate">执行计算</button>
-  </view>
+    <text>{{index}}</text> 
+   <view class="input-area">
+    <input placeholder="输入数量" type="number" focus="{{focusFlag==='number'}}" bindinput="InputNumber" 
+    bindconfirm="InputFinish" class="{{focusFlag==='number'?'warning':''}}"/>
+    <input placeholder="输入单价" type="number" focus="{{focusFlag==='price'}}" bindinput="InputPrice" 
+    bindconfirm="InputFinish" class="{{focusFlag==='price'?'warning':''}}"/>
+    <button class="btn-checkall" bindtap="CheckAll">全选</button>
+    <button class="btn-addset" bindtap="Add">添加</button>
+    <button class="btn-calculate" bindtap="Calculate">执行计算</button>    
+  </view>  
 </form>
 </view>

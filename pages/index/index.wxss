@@ -1,6 +1,7 @@
 /**index.wxss**/
 .calculator-container {
   padding: 10px 20px;
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 .section{
   display: flex;
@@ -14,21 +15,50 @@
   width: 40px;
   text-align: center;
 }
-.input-section input{
-  box-sizing: border-box;
+
+.input-area{
+  float:right;
+  margin-top:10%;
+  padding: 8rpx;
+  width: 30%;
+  min-width: 200rpx;
+  border-radius: 12rpx;
+  background-color:#f4f8fd; 
+}
+.input-area input{
+  margin-bottom: 6rpx;
+  padding-left:.4em;
+  padding-right:.4em;
+  height: 52rpx;
+  line-height: 52rpx;
   border:1px solid #eee;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  background-color: #fff;
 }
-.input-section .section3{
-  color:#777;
+.input-area input.warning{
+  border: 1rpx solid rgba(255,0,0,.3); 
 }
-.btn-minus,.btn-add {
-  float:left;
-  margin-right: 10px;
-  width: 50px;
+.input-area button{
+  padding: 0;
+  font-size: 28rpx; 
+}
+.btn-checkall{
+  margin-right: 4%;
+}
+.btn-checkall,.btn-addset{
+  float: left;
+  margin-bottom: 10rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  width: 48%;
+  background-color: #fff;
 }
 .btn-calculate{
   float: right;
+  height: 56rpx;
+  line-height: 56rpx;
   background-color: #1f86ed;
   color: #fff;
-  width: 100px;
+  width: 100%;
 }
