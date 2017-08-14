@@ -1,21 +1,34 @@
 /**index.wxss**/
-.userinfo {
+.calculator-container {
+  padding: 10px 20px;
+}
+.section{
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.section2,.section3{
+  flex: 1;
+  margin-bottom:10px;
+  text-align: center;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.section1,.section4{
+  width: 40px;
+  text-align: center;
 }
-
-.usermotto {
-  margin-top: 200px;
+.input-section input{
+  box-sizing: border-box;
+  border:1px solid #eee;
+}
+.input-section .section3{
+  color:#777;
+}
+.btn-minus,.btn-add {
+  float:left;
+  margin-right: 10px;
+  width: 50px;
+}
+.btn-calculate{
+  float: right;
+  background-color: #1f86ed;
+  color: #fff;
+  width: 100px;
 }
