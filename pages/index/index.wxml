@@ -2,26 +2,42 @@
 <view class="calculator-container">
 <form>
   <view class="section title-section">
-    <text class="section1">数量{{i}}</text>
+    <text class="section1">数量</text>
     <text class="section2">单价</text>
     <text class="section3">结算价</text>
-    <text class="section4">选中</text>
   </view>
-  <view class="section text-section" wx:for="{{count}}" wx:key="index">
-     <text class="section1">{{set[index].number||'?'}}</text>
-    <text class="section2">{{set[index].price||'?'}}</text>
-    <text class="section3">{{set[index].result||'?'}}</text>
-    <checkbox value="{{!!set[index].check}}"/> 
-  </view>
-    <text>{{index}}</text> 
-   <view class="input-area">
-    <input placeholder="输入数量" type="number" focus="{{focusFlag==='number'}}" bindinput="InputNumber" 
-    bindconfirm="InputFinish" class="{{focusFlag==='number'?'warning':''}}"/>
-    <input placeholder="输入单价" type="number" focus="{{focusFlag==='price'}}" bindinput="InputPrice" 
-    bindconfirm="InputFinish" class="{{focusFlag==='price'?'warning':''}}"/>
-    <button class="btn-checkall" bindtap="CheckAll">全选</button>
-    <button class="btn-addset" bindtap="Add">添加</button>
-    <button class="btn-calculate" bindtap="Calculate">执行计算</button>    
+  <view class="section text-section" wx:if="{{count<1}}">
+    <text>点击+号按钮输入数量与单价，全部输入完毕后，按下=按钮</text>
   </view>  
+  <block wx:else>
+  <view class="section input-section" wx:for="{{count}}" wx:key="index">
+    <view class="section1">
+       <input placeholder="输入数量" value="{{set[index].number}}" type="text" bindblur="InputNumber" 
+      bindconfirm="InputFinish" data-index="{{index}}" class="{{set[index].focusFlag==='number'?'warning':''}}"/> 
+    </view>
+    <view class="section2">
+       <input placeholder="输入单价" value="{{set[index].price}}" type="text" bindblur="InputPrice" 
+      bindconfirm="InputFinish" data-index="{{index}}" class="{{set[index].focusFlag==='price'?'warning':''}}"/> 
+    </view>
+    <view class="section3">
+      <text class="">{{set[index].result||'?'}}</text>
+    </view>
+  </view> 
+  </block>
+  <view class="divider"></view>
+  <view class="section input-section input-total-section">
+    <view class="section1">
+      <text>应付：{{totalPriceBefore||'？'}}</text>
+    </view>
+    <view class="section2">
+      <text>实付：</text>
+      <input placeholder="输入价格" type="text" bindblur="InputTotal" 
+      bindconfirm="InputFinish" class="{{totalFocusFlag?'':'warning'}}"/> 
+    </view>
+  </view>
+  <view class="btn-area">
+    <button class="btn-add" bindtap="Add">+</button>
+    <button class="btn-calculate" bindtap="Calculate">=</button>
+  </view>
 </form>
 </view>
