@@ -2,9 +2,11 @@
 <view class="calculator-container">
   <view class="intro-section">
     <text class="title">使用说明：</text>
-    <text class="text">1. 点击加号输入商品价格与数；</text>
-    <text class="text">2. 点击实际支付输入实际支付价格</text>
-    <text class="text">3. 输入完毕后按下=按钮进行计算</text>
+    <text class="text">1. 输入数量、单价和实际价格；</text>
+    <text class="text">2. 在商品右上角选中参与计算的商品；</text>
+    <text class="text">3. 点击“算”按钮进行计算；</text>
+    <text class="text">4. 点击“加”按钮添加商品；</text>
+    <text class="text">3. 点击“请”按钮清空输入</text>
   </view>
   <view class="section {{set[index].checked?'checked':''}}" wx:for="{{count}}" wx:key="index">
     <view class="title-section">
@@ -61,7 +63,7 @@
     <button class="btn-add" bindtap="Clear">清</button>
   </view>
   <view class="btn-area pull-right">
-    <button class="btn-add" bindtap="Add">+</button> 
+    <button class="btn-add" bindtap="Add">加</button> 
     <button class="btn-calculate" bindtap="Calculate">算</button>
   </view>
 </view>

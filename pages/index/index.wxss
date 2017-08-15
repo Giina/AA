@@ -27,6 +27,7 @@
   margin-bottom: 8rpx;
   width: 100rpx;
   height: 100rpx;
+  line-height: 100rpx;
   border-radius:100rpx;
 }
 .btn-add{
