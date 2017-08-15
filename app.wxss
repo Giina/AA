@@ -12,7 +12,9 @@
 button::after{
   border:none;
 }
-
+input:focus{
+  background: red;
+}
 .pull-left{
   float:left;
 }

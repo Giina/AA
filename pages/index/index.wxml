@@ -16,12 +16,10 @@
     </view>
     <view class="input-form-container">
       <view class="input-container {{set[index].warningFlag==='number'?'warning':''}}">数量：
-        <input placeholder="输入数量" value="{{set[index].number}}" type="text" bindblur="InputNumber" 
-        bindconfirm="InputFinish" data-index="{{index}}" class=""/> 
+        <input placeholder="输入数量" value="{{set[index].number}}" type="text" bindblur="InputNumber" data-index="{{index}}"/> 
       </view>
       <view class="input-container {{set[index].warningFlag==='price'?'warning':''}}">单价：
-        <input placeholder="输入单价" value="{{set[index].price}}" type="text" bindblur="InputPrice" 
-        bindconfirm="InputFinish" data-index="{{index}}" class=""/> 
+        <input placeholder="输入单价" value="{{set[index].price}}" type="text" bindblur="InputPrice" data-index="{{index}}"/> 
       </view>
     </view>
   </view>

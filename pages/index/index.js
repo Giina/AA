@@ -50,7 +50,7 @@ Page({
     })
   },
   InputTotal: function (e) {
-    console.log('parse:', e.detail.value)
+    // console.log('parse:', e.detail.value)
     this.setData({
       totalPriceAfter: parseFloat(e.detail.value)
     })
@@ -134,7 +134,7 @@ Page({
       }
       for (let i in this.data.set) {
         if (this.data.set[i].price > 0 && this.data.set[i].number > 0) {
-          console.log(i, ':', this.data.set[i].price / this.data.totalPriceBefore * this.data.totalPriceAfter, this.data.set[i].price, this.data.totalPriceBefore ,this.data.totalPriceAfter)
+          // console.log(i, ':', this.data.set[i].price / this.data.totalPriceBefore * this.data.totalPriceAfter, this.data.set[i].price, this.data.totalPriceBefore ,this.data.totalPriceAfter)
           this.data.set[i].result = Math.round((this.data.set[i].price / this.data.totalPriceBefore * this.data.totalPriceAfter) * 100) / 100
         }
       }
