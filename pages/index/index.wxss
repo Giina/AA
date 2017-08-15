@@ -3,51 +3,24 @@
   padding: 10px 20px;
   font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
-.section{
+.intro-section{
   display: flex;
-}
-.section.title-section{
-  margin-bottom: 12rpx;
-}
-.section.text-section{
-  font-size: 28rpx;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 6rpx;
+  border:1px dashed #ccc;
   color:#ccc;
 }
-.section1,.section2{
-  flex: 1; 
-  overflow: hidden;
-}
-.section3{
-  width: 160rpx;
-  min-width: 160rpx;
-  text-align: center;
-}
-.section4{
-  width: 80rpx;
-  min-width: 80rpx;
-}
-.input-section input{
-  margin-bottom: 6rpx;
-  width:80%;
-  height: 52rpx;
-  line-height: 52rpx;
+.intro-section .title{
+  width: 100%;
   font-size: 28rpx;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc; 
 }
-input.warning{
-  border-bottom-color: rgba(255,0,0,.3); 
-}
-.input-section button{
-  padding: 0;
-  height: 50rpx;
-  width: 50rpx;
-  line-height: 1.4;
-  background-color: #fff;
-  border-color:#ccc;
+.intro-section .text{
+  width: 100%;
+  font-size: 24rpx;
 }
 .btn-area{
-  float: right;
   margin-top: 40rpx;
 }
 .btn-area button{
@@ -57,30 +30,62 @@ input.warning{
   border-radius:100rpx;
 }
 .btn-add{
-  background-color: #fff;
+   background-color: #fff;
   border:1rpx solid #1f86ed;
-  color:#1f86ed;
+  color:#1f86ed; 
 }
 .btn-calculate{
   background-color: #1f86ed;
   border:1rpx solid #1f86ed;
   color:#fff;
 }
-
-.divider{
-  margin-top: 20rpx;
+.section{
   margin-bottom: 20rpx;
-  height:2rpx;
-  width: 100%;
-  background-color: #ccc;
+  padding: 0 24rpx;
+  border-radius: 6rpx;
+  border:1px dashed #ccc;
 }
-.input-total-section{
-  justify-content: space-between;
-}
-.input-total-section .section2{
-  flex:inherit;
+.title-section{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100rpx;
+  border-bottom:1px solid #ccc;
+  color:#999;
 }
-.input-total-section .section2 input{
-  width: 120rpx;
+.title-section .btn-container{
+  /* width: 48rpx; */
+  height: 52rpx;
+}
+.input-form-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92rpx;
+}
+.input-container{
+  display: flex;
+  color: #999;
+}
+.input-container input{
+  flex:1;
+  max-width:150rpx;
+}
+.total-price-section .title-section{
+  border-bottom:none;
+}
+.total-price-section .input-container input{
+  margin-right: 12rpx;
+  text-align: right;
+}
+.section.checked {
+  border-style:solid;
+  border-color:#1f86ed;
+}
+.section.checked .title-section,.section.checked .input-container {
+  border-color:#1f86ed;
+  color:#1f86ed;
+}
+.input-container.warning,.section.checked .title-section.warning{
+  color:red;
 }
